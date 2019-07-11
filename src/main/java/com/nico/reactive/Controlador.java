@@ -9,11 +9,16 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/controlador")
 public class Controlador {
 
-
     @GetMapping("/obtenerMono")
     public Mono<ObjetoDominio> obtenerMono(){
 
         ObjetoDominio objetoDominio = new ObjetoDominio();
+        objetoDominio.setNombre("nombre de prueba");
+        objetoDominio.setValor("valor de prueba");
+
+        System.out.println("---------------------------------------");
+        System.out.println("paso por aca (provider)");
+        System.out.println("---------------------------------------");
 
         return Mono.just(objetoDominio);
     }
